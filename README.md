@@ -1,6 +1,6 @@
-# Marvel Flask `https://marvel-flask.glitch.me/`
+# Kekkonmi Flask
 
-Marvel Flask is a web application built with Flask that allows users to register, log in, create/delete their own characters with quotes and images.
+Kekkonmi Flask is a web application built with Flask that allows users to register, log in, create/delete their own characters with quotes and images.
 
 ## Features
 
