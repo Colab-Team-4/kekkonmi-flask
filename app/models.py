@@ -20,7 +20,7 @@ class User(db.Model, UserMixin):
     token = db.Column(db.String, default='', unique=True)
     join_date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
-    def __init__(self, username, email, password):
+    def __init__(self, email, password):
         self.id = self.set_id()
         self.email = email
         self.password = self.set_password(password)
