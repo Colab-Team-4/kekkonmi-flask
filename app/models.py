@@ -37,3 +37,21 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f'email: {self.email} added to Users'
+
+
+
+
+# Not sure if I have to wait for a template to make this part
+class Venue(db.Model):
+    id = db.Column(db.String, primary_key=True)
+    price = db.Column(db.BigInteger, nullable=False)
+    location = db.Column(db.String(150), nullable=False)
+    user_token = db.Column(db.String, default='', unique=True)
+
+class Event(db.Model):
+    start_date = db.Column(db.Date, nullable=False)
+    end_date = db.Column(db.Date, nullable=False)
+    total_price = db.Column(db.BigInteger, nullable=False)
+    user_token = db.Column(db.String, default='', unique=True)
+
+
