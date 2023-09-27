@@ -40,11 +40,9 @@ class User(db.Model, UserMixin):
 
 
 
-
-# Not sure if I have to wait for a template to make this part
 class Venue(db.Model):
     id = db.Column(db.String, primary_key=True)
-    price = db.Column(db.BigInteger, nullable=False)
+    price = db.Column(db.Numeric(precision=10, scale=2))
     location = db.Column(db.String(150), nullable=False)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable=False)
 
@@ -63,7 +61,7 @@ class Venue(db.Model):
 class Event(db.Model):
     start_date = db.Column(db.Date, nullable=False)
     end_date = db.Column(db.Date, nullable=False)
-    total_price = db.Column(db.BigInteger, nullable=False)
+    total_price = db.Column(db.Numeric(precision=10, scale=2))
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable=False)
 
     def __init__(self, start_date, end_date, total_price, user_token):
