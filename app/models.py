@@ -38,8 +38,6 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f'email: {self.email} added to Users'
 
-
-
 class Venue(db.Model):
     id = db.Column(db.String, primary_key=True)
     price = db.Column(db.Numeric(precision=10, scale=2))
