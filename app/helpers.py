@@ -1,4 +1,5 @@
-from flask import request, jsonify, json
+
+from flask import request, jsonify, json, current_app
 from functools import wraps
 from .models import User
 import secrets, decimal, inspect, requests, os
@@ -32,3 +33,15 @@ def token_required(flask_function):
         else:
             return flask_function(*args, **kwargs)
     return decorated
+
+# def search_venues(query: str) -> dict:
+#     url = f"https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&key={os.getenv('GOOGLE_MAPS_KEY')}"
+#     response = requests.get(url)
+#     data = response.json()
+#     return data
+
+# def get_venue_details(venue_id: str) -> dict:
+#     url = f"https://maps.googleapis.com/maps/api/place/details/json?place_id={venue_id}&key={os.getenv('GOOGLE_MAPS_KEY')}"
+#     response = requests.get(url)
+#     data = response.json()
+#     return data
